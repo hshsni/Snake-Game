@@ -46,15 +46,6 @@ def game_over():
     time.sleep(3)
     pygame.quit()
     quit()
-
-def respawn():
-	my_font = pygame.font.SysFont('Monospace', 50)
-	game_over_surface = my_font.render('Press R to  Respawn', True, red)
-	game_over_rect = game_over_surface.get_rect()
-	# setting position of the text
-	game_over_rect.midtop = (window_x/2, window_y/4+100)
-	game_window.blit(game_over_surface, game_over_rect)
-	pygame.display.flip()
  
 while True:
 
@@ -114,10 +105,8 @@ while True:
  
     # Game Over conditions
     if snake_position[0] < 0 or snake_position[0] > window_x-10:
-        respawn()
         game_over()
     if snake_position[1] < 0 or snake_position[1] > window_y-10:
-        respawn()
         game_over()
  
     # Touching the snake body
