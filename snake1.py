@@ -1,6 +1,8 @@
 import pygame
 import time
 import random
+import sys
+
 def main(): 
     snake_speed = 15
 
@@ -63,6 +65,8 @@ def main():
     while True:
 
         for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                sys.exit()
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_UP:
                     change_to = 'UP'
